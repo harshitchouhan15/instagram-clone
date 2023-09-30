@@ -10,11 +10,11 @@ const messageRoute = require("./routes/message")
 const notificationRoute =  require("./routes/notification")
 const io = require("socket.io")(8900,{
     cors:{
-        origin: "http://localhost:3000"
+        origin: "https://instagram-clone-7d5d2735c8b3.herokuapp.com/"
     }
 })
-
 dotenv.config()
+
 
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log("db connection successful.")).catch((e)=>console.log(e))
 
@@ -29,7 +29,7 @@ app.use("/api/messages", messageRoute)
 app.use('/api/noti', notificationRoute)
 
 
-app.listen(5500, ()=>console.log("backend is running."))
+app.listen(process.env.PORT || 5500, ()=>console.log("backend is running."))
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.get('*', (req, res) => {
@@ -38,6 +38,8 @@ app.get('*', (req, res) => {
 
 
 //socket server implementation 
+
+
 
 let users = []
 

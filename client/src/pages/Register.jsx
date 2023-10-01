@@ -98,14 +98,15 @@ if(  error) {
  
       <p>Sign up to see photos and videos from your friends.</p>
 
-      <CssTextField  type="email" onChange={handleChange} name="email" id='email' label="Email"/>
-      <CssTextField  type="text" onChange={handleChange} name="name" id='fullname' label="Full Name"/>
-      <CssTextField  type="text" onChange={handleChange} name="username" id='username' label="Username"/>
-      <CssFormControl   variant="outlined">
+      <CssTextField required type="email" onChange={handleChange} name="email" id='email' label="Email"/>
+      <CssTextField required type="text" onChange={handleChange} name="name" id='fullname' label="Full Name"/>
+      <CssTextField required type="text" onChange={handleChange} name="username" id='username' label="Username"/>
+      <CssFormControl  required variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             onChange={handleChange}
+            
             name='password'
             type={showPassword ? 'text' : 'password'}
             endAdornment={
@@ -193,7 +194,7 @@ const Form=styled.form`
     padding: 3vh 2vw;
     border: 1px solid #d3d2d2;
     @media screen and (max-width:768px){
-  width: 78vw;
+  width: 80vw;
   height: 65vh;
   padding: 1.5vh 2vw;
 };
@@ -237,7 +238,7 @@ const Bottom=styled.div`
     width: 23vw;
     gap: 8px;
     @media screen and (max-width:768px){
-  width: 75vw;
+  width: 80vw;
 }
 `
 

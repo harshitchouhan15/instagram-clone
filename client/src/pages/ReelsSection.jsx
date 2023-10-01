@@ -92,7 +92,6 @@ const Container=styled.div`
 `
 
 
-
 const Feed=styled.div`
     width: 30vw;
    height: 79vh;
@@ -113,12 +112,11 @@ flex-direction: column;
     };
 
     
-
 `
 const Back=styled(Link)`
  position: fixed;
   top: 15px;
-  right: 15px;
+  left: 15px;
   background-color:transparent;
   opacity:0;
   cursor: pointer;

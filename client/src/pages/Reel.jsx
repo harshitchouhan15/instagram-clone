@@ -146,7 +146,7 @@ export default Reel
 const Container=styled.div`
     display: flex;
     width: 27vw;
-    min-height: 77vh;
+    min-height: 79vh;
    
     scroll-snap-align: start;
     

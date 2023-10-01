@@ -1,7 +1,7 @@
 import { Modal } from '@mui/material';
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import './loader.css'
 import { useSelector, useDispatch } from 'react-redux';
@@ -16,7 +16,7 @@ const Hamburger = () => {
   return (
     <div className='menuIcon'  >
        
-      < MenuOutlinedIcon onClick={()=>setIsOpen(!isOpen)}/>
+      < SettingsOutlinedIcon onClick={()=>setIsOpen(!isOpen)}/>
 
  <Modal open={isOpen} onBackdropClick={()=>setIsOpen(false)} >
     <Container darkMode={darkMode} >

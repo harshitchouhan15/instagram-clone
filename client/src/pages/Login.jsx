@@ -179,6 +179,7 @@ const Button=styled.button`
   justify-content: center;
   align-items: center;
   background-color: #0095f6;
+  font-size: 15px;
   &:hover{
     background-color: #1877f2
   };

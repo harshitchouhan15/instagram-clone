@@ -17,6 +17,8 @@ import image from '../assets/login.png'
 import './loader.css'
 
 
+
+
 const Register = () => {
 const [inputs,setInputs]=useState({})
 const dispatch=useDispatch()
@@ -96,10 +98,10 @@ if(  error) {
  
       <p>Sign up to see photos and videos from your friends.</p>
 
-      <TextField type="email" onChange={handleChange} name="email" id='email' label="Email"/>
-      <TextField type="text" onChange={handleChange} name="name" id='fullname' label="Full Name"/>
-      <TextField type="text" onChange={handleChange} name="username" id='username' label="Username"/>
-      <FormControl  variant="outlined">
+      <CssTextField  type="email" onChange={handleChange} name="email" id='email' label="Email"/>
+      <CssTextField  type="text" onChange={handleChange} name="name" id='fullname' label="Full Name"/>
+      <CssTextField  type="text" onChange={handleChange} name="username" id='username' label="Username"/>
+      <CssFormControl   variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -120,7 +122,7 @@ if(  error) {
             }
             label="Password"
           />
-        </FormControl>
+        </CssFormControl>
 <Button   click={click} disabled={click} type='submit'> 
       {click?
         <div className="spinner"></div>  
@@ -146,13 +148,26 @@ if(  error) {
 
 export default Register
 
+
+const CssTextField=styled(TextField)`
+
+@media screen and (max-width:768px){
+ margin-top: 5px;
+};
+`
+
+const CssFormControl=styled(FormControl)`
+@media screen and (max-width:768px){
+ margin-top: 5px;
+};
+`
+
 const Container=styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 gap: 10vw;
 
 `
@@ -178,8 +193,8 @@ const Form=styled.form`
     padding: 3vh 2vw;
     border: 1px solid #d3d2d2;
     @media screen and (max-width:768px){
-  width: 75vw;
-  height: 60vh;
+  width: 78vw;
+  height: 65vh;
   padding: 1.5vh 2vw;
 };
     &>p{
@@ -237,6 +252,7 @@ const Button=styled.button`
   border-radius: 8px;
   background-color: #0095f6;
   margin-top: 10px;
+  font-size: 15px;
   &:hover{
     background-color: #1877f2
   };

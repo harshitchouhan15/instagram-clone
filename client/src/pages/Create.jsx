@@ -84,9 +84,10 @@ const Logo=styled.img`
     width: 10vw;
     align-self: center;
     margin-top: 50px;
+    cursor: pointer;
     @media screen and (max-width:768px){
-        width: 15vw;
-        height: 15vw;
+        width: 20vw;
+        height: 20vw;
     }
 `
 
@@ -105,8 +106,8 @@ const Container=styled.div`
     left: 0;right: 0;
 border-radius: 10px;
 @media screen and (max-width:768px){
-        width: 80vw;
-        height: 70vh;
+        width: 85vw;
+        height: 68vh;
     }
 `
 const Head=styled.div`
@@ -114,6 +115,9 @@ display: flex;
 justify-content: space-evenly;
 padding: 8px;
 border-bottom: 1px solid #a8a8aa;
+@media screen and (max-width:768px){
+       padding: 6px 8px;
+    }
 `
 
 const Label=styled.div`
@@ -139,8 +143,11 @@ const Top=styled.h3`
     padding: 10px;
     cursor: pointer;
     text-align: center;
-    color: ${props=>props.selected?'blue':'#2d2c2d'};
+    color: ${props=>props.selected?'#4385ff':'#2d2c2d'};
     font-weight: ${props=>props.selected&&500};
+    @media screen and (max-width:768px){
+      padding: 8px;
+    }
 `
 
 const Image=styled.img`
@@ -186,7 +193,7 @@ align-self: center;
     cursor: not-allowed;
 }
 &:hover{
-    color:#4385ff
+    color:#4385ff;
 }
 
 `

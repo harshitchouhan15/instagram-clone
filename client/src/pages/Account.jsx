@@ -175,7 +175,7 @@ useEffect(()=>{
 
      <Button 
      onClick={()=>{setClicked(true);isFollowing?setFollowers(followers.filter(f=>f!==user?._id)):setFollowers(f=>[...f,user?._id])}}
-      color="white" bg="#8348f9" >
+      color="white" bg="#0095f6" >
               
                 {isFollowing?"Unfollow":"Follow"}
                 </Button>}  
@@ -415,9 +415,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 3px;
-color: ${props=>props.selected && '#8448fd'};
+color: ${props=>props.selected && '#0095f6'};
 font-weight: ${props=>props.selected && 500};
-border-bottom: ${props=>props.selected && '1px solid #29292a'};
+border-bottom: ${props=>props.selected && '0.7px solid #5e5e5f'};
 `
 
 const Span=styled.span`
@@ -480,7 +480,7 @@ background-color:${props=>props.bg};
 color:${props=>props.color};
 &>span{
     cursor: pointer;
-    background-color: #4d39fe;
+    background-color: #0095f6;
     color:white;
     padding:5px 15px;
 }

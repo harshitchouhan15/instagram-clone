@@ -1,23 +1,20 @@
-
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import styled from 'styled-components'
 import SinglePost from './SinglePost'
-import { useState,useEffect, useRef } from 'react'
+import { useState,useEffect } from 'react'
 import {axiosInstance} from '../config'
-import {useSelector} from "react-redux"
 import Navbar from './Navbar'
 import CommentSection from "./CommentSection"
 import Reel from './Reel'
+import { Link } from 'react-router-dom';
 
 const ReelsSection = ({socket}) => {
-   // const user = useSelector(state=>state.user.currentUser)
 
     const [open,setOpen]=useState(false)
     const [fetch,setFetch]=useState(false)
     const [index,setIndex]=useState(0)
     const [openComment, setOpenComment] = useState(false)
-    const [reels,setReels]=useState([])
-    const darkMode=useSelector(state=>state.darkMode)
-    
+    const [reels,setReels]=useState([])    
     const [muted,setMuted]=useState(true)
   
 
@@ -40,6 +37,12 @@ const ReelsSection = ({socket}) => {
         <Navbar socket={socket}  />
 
  <Container>
+
+  <Back to='/' >
+  <KeyboardBackspaceIcon htmlColor='white' fontSize="medium" />
+  </Back>
+   
+ 
  <CommentSection  fetch={fetch} setFetch={setFetch} setOpenComment={setOpenComment} socket={socket} 
          openComment={openComment} selected={reels[index]}/>
 
@@ -83,6 +86,7 @@ const Container=styled.div`
 
     @media screen and (max-width:768px){
       width: 100vw;
+
     }
    
 `
@@ -91,7 +95,7 @@ const Container=styled.div`
 
 const Feed=styled.div`
     width: 30vw;
-   height: 77vh;
+   height: 79vh;
    overflow-y: scroll;
 display: flex;
 flex-direction: column;
@@ -108,35 +112,22 @@ flex-direction: column;
     
     };
 
-    &>:first-child{
-        margin-top: 30px;
-    };
-    &>:last-child{
-        margin-bottom: 30px;
-    }
+    
 
 `
-const Back=styled.span`
- font-size: 18px;
-        font-weight: 400;
-        background-color:white;
-        background-color: ${props=>props.darkMode&&'black'};
-        color: ${props=>props.darkMode&&'white'};
-        position: fixed;
-        display: none;
-        align-items: center;
-        padding-left: 10px;
-        top: 0;
-        z-index: 9999;
-        gap: 12px;
-        padding: 15px 12px;
-        height: 7vh;
-        width: 100vw;
-        @media screen and (max-width:768px){
-       display: flex;
-    
+const Back=styled(Link)`
+ position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color:transparent;
+  opacity:0;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+  @media screen and (max-width:768px){
+        opacity: 1;
+        display: block;
     };
-
 `
 
 

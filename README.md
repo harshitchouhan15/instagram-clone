@@ -4,7 +4,7 @@ Welcome to my Instagram clone project! This is a MERN (MongoDB, Express, React, 
 
 ## Live Demo
 
-Check out the live demo of this project: [Instagram Clone](https://instagram-clone-7d5d2735c8b3.herokuapp.com/)
+Check out the live demo of this project: [Instagram Clone](http://3.95.20.254:5500/)
 
 ## Features
 

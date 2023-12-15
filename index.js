@@ -10,7 +10,7 @@ const messageRoute = require("./routes/message")
 const notificationRoute =  require("./routes/notification")
 const io = require("socket.io")(8900,{
     cors:{
-        origin: "https://instagram-clone-7d5d2735c8b3.herokuapp.com/"
+        origin: "http://3.95.20.254:5500/"
     }
 })
 dotenv.config()

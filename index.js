@@ -8,17 +8,22 @@ const postRoute = require("./routes/post")
 const chatRoute = require("./routes/conversation")
 const messageRoute = require("./routes/message")
 const notificationRoute =  require("./routes/notification")
-const io = require("socket.io")(8900,{
-    cors:{
-        origin: "http://3.95.20.254:5500/"
-    }
-})
+const http = require("node:http")
+const socketIO = require("socket.io")
+
+const app= express()
+
+const httpServer = http.createServer(app)
+
 dotenv.config()
+
+const io = socketIO(httpServer,{
+    origin:"*"
+})
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log("db connection successful.")).catch((e)=>console.log(e))
 
-const app= express()
 app.use(express.json())
 
 app.use("/api/auth", authRoute)
@@ -29,7 +34,7 @@ app.use("/api/messages", messageRoute)
 app.use('/api/noti', notificationRoute)
 
 
-app.listen(process.env.PORT || 5500, ()=>console.log("backend is running."))
+httpServer.listen(process.env.PORT || 5500, ()=>console.log("backend is running."))
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.get('*', (req, res) => {

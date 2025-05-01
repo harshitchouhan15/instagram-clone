@@ -21,7 +21,7 @@ const Register = lazy(()=>import("./pages/Register"))
 
 const App = () => {
 const user=useSelector(state=>state.user.currentUser)
-const socket = useRef(io('ws://localhost:8900'))
+const socket = useRef(io('https://instagram-clone-kok4.onrender.com',{transports:["polling"], upgrade:false}))
 const darkMode=useSelector(state=>state.darkMode)
 
 useEffect(() => {
